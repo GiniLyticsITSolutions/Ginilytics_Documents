@@ -14,10 +14,8 @@
 6. [AI-Powered Capabilities](#6-ai-powered-capabilities)
 7. [Database Schema Overview](#7-database-schema-overview)
 8. [Tech Stack](#8-tech-stack)
-9. [Environment Setup](#9-environment-setup)
-10. [Deployment](#10-deployment)
-11. [Security Model](#11-security-model)
-12. [What Needs to Be Done (Roadmap)](#12-what-needs-to-be-done-roadmap)
+9. [Security Model](#11-security-model)
+10. [What Needs to Be Done (Roadmap)](#12-what-needs-to-be-done-roadmap)
 
 ---
 
@@ -336,86 +334,7 @@ Built on **Supabase (PostgreSQL)** with full **Row Level Security (RLS)**.
 | **Deployment** | Vercel | Optimized for Next.js, global CDN |
 
 ---
-
-## 9. Environment Setup
-
-### Prerequisites
-- Node.js v18+
-- npm
-- Git
-- Supabase account (https://supabase.com/)
-- OpenAI API key (https://platform.openai.com/api-keys)
-
-### Step-by-Step
-
-**1. Clone & Install**
-```bash
-git clone <repository-url>
-cd CRM-project
-npm install
-```
-
-**2. Create Supabase Project**
-1. Go to app.supabase.com → New Project
-2. In the SQL Editor, run `supabase/schema.sql` entirely
-3. Copy your Project URL, anon key, and service_role key from Project Settings → API
-
-**3. Create Admin User**
-1. In Supabase: Authentication → Users → Add User (enable "Auto Confirm")
-2. Then run in SQL Editor:
-```sql
-UPDATE profiles SET role = 'admin', name = 'Admin User'
-WHERE email = 'your-admin@email.com';
-```
-
-**4. Configure Environment Variables**
-
-Create `.env.local` in the project root:
-```env
-NEXT_PUBLIC_SUPABASE_URL=https://your-project-id.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
-SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
-OPENAI_API_KEY=sk-your-openai-key
-```
-
-> Warning: Never commit `.env.local` to version control.
-
-**5. Run Locally**
-```bash
-npm run dev
-```
-Open http://localhost:3000
-
-### Available Scripts
-
-| Command | Purpose |
-|---|---|
-| `npm run dev` | Start development server |
-| `npm run build` | Build production bundle |
-| `npm run start` | Run production server |
-| `npm run lint` | Run ESLint checks |
-
----
-
-## 10. Deployment
-
-### Deploy to Vercel (Recommended)
-
-1. Push code to GitHub (ensure `.env.local` is in `.gitignore`)
-2. Connect your GitHub repo at vercel.com
-3. Add environment variables in Vercel → Project Settings → Environment Variables
-4. Deploy — Vercel auto-detects Next.js and handles everything
-
-### Post-Deployment Checklist
-- [ ] Verify Supabase connection works from production URL
-- [ ] Test authentication login/signup flow
-- [ ] Confirm AI features respond (check OpenAI API credits)
-- [ ] Test file upload/download via Supabase Storage
-- [ ] Enable 2FA on Supabase and OpenAI accounts
-
----
-
-## 11. Security Model
+## 9. Security Model
 
 ### Row Level Security (RLS)
 Every table has RLS enabled. Key policies:
@@ -443,7 +362,7 @@ Every table has RLS enabled. Key policies:
 
 ---
 
-## 12. What Needs to Be Done (Roadmap)
+## 10. What Needs to Be Done (Roadmap)
 
 ### Critical (Must Have)
 - [ ] **Google Workspace Integration** — Gmail, Google Drive, Google Meet, Google Docs sync
