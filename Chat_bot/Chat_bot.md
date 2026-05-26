@@ -69,23 +69,23 @@ The **Ginilytics Website Chatbot** is an intelligent, AI‑driven virtual assist
 ---
 ```mermaid
 flowchart TD
-    A[Visitor] --> B[Chat Widget (JS)]
-    B --> C[FastAPI /chat endpoint]
-    C --> D[Retriever (Vector Store)]
-    D --> E[LLM (OpenAI/GPT)]
+    A[Visitor] --> B[ChatWidget]
+    B --> C[FastAPI]
+    C --> D[Retriever]
+    D --> E[LLM]
     E --> C
-    C --> F[Response to Widget]
+    C --> F[Response]
     F --> A
     subgraph Ingestion
-        G[Weekly Sitemap Crawl] --> H[Document Parser]
-        H --> I[Embedding Store Update]
+        G[Sitemap Crawl] --> H[Parser]
+        H --> I[Embedding Update]
     end
     G --> C
 ```
 
 
 ## 📚 Resources for Prospects
-- **Live Demo** – Schedule a 30‑minute walkthrough (link to calendar).
+- **Live Demo** – Schedule a 30‑minute walkthrough (https://ginilytics.com/contact-us/).
 - **Case Study** – See how a SaaS company lifted conversions by 28%.
 - **Technical FAQ** – For IT teams evaluating security and compliance.
 ## ❓ Frequently Asked Questions
@@ -107,8 +107,7 @@ Yes – upload a style guide or sample dialogues and the prompt‑engineer align
 ## 📞 Ready to Transform Your Website?
 Contact our sales team today:
 - **Email:** sales@ginilytics.com
-- **Phone:** +1 800‑555‑1234
-- **Website:** https://www.ginilytics.com/contact
+- **Website:** https://ginilytics.com/contact-us
 
 ---
 
